@@ -12,7 +12,7 @@ class CheckboxListTileFormField extends FormField<bool> {
     bool autovalidate = false,
     bool enabled = true,
     bool dense = false,
-    Color errorColor,
+    TextStyle errorStyle,
     Color activeColor,
     Color checkColor,
     ListTileControlAffinity controlAffinity = ListTileControlAffinity.leading,
@@ -24,8 +24,8 @@ class CheckboxListTileFormField extends FormField<bool> {
           initialValue: initialValue,
           autovalidate: autovalidate,
           builder: (FormFieldState<bool> state) {
-            errorColor ??=
-                (context == null ? Colors.red : Theme.of(context).errorColor);
+            errorStyle ??=
+                (context == null ? TextStyle(color: Colors.red) : TextStyle(color:Theme.of(context).errorColor));
 
             return CheckboxListTile(
               title: title,
@@ -37,7 +37,7 @@ class CheckboxListTileFormField extends FormField<bool> {
               subtitle: state.hasError
                   ? Text(
                       state.errorText,
-                      style: TextStyle(color: errorColor),
+                      style: errorStyle,
                     )
                   : null,
               controlAffinity: controlAffinity,
