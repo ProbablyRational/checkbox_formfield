@@ -22,10 +22,9 @@ class CheckboxListTileFormField extends FormField<bool> {
           onSaved: onSaved,
           validator: validator,
           initialValue: initialValue,
-          autovalidate: autovalidate,
+          autovalidateMode: autovalidate ? AutovalidateMode.disabled : AutovalidateMode.disabled,
           builder: (FormFieldState<bool> state) {
-            errorStyle ??=
-                (context == null ? TextStyle(color: Colors.red) : TextStyle(color:Theme.of(context).errorColor));
+            errorStyle ??= (context == null ? TextStyle(color: Colors.red) : TextStyle(color: Theme.of(context).errorColor));
 
             return CheckboxListTile(
               title: title,

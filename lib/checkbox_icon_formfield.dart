@@ -20,7 +20,7 @@ class CheckboxIconFormField extends FormField<bool> {
           key: key,
           onSaved: onSaved,
           initialValue: initialValue,
-          autovalidate: autovalidate,
+          autovalidateMode: autovalidate ? AutovalidateMode.disabled : AutovalidateMode.disabled,
           builder: (FormFieldState<bool> state) {
             trueIconColor ??= (context == null
                 ? null
